@@ -68,8 +68,8 @@ for scheme in ['gruvbox', 'molokai', 'desert', 'solarized']
 endfor
 
 " Set 80 char ruler
-set colorcolumn=81
-highlight ColorColumn ctermbg=7
+set colorcolumn=101
+highlight ColorColumn ctermbg=0
 
 " Powerline
 " python from powerline.vim import setup as powerline_setup

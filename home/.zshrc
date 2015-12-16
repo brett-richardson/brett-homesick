@@ -39,13 +39,15 @@ plugins=(git)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
+export PATH="/Users/brett/bin:$PATH"
+export HOMEBREW_GITHUB_API_TOKEN="eeb8391a28f4e26110c10b535228ef0a8975eaf7"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-
+eval "$(docker-machine env default)"
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -64,6 +66,7 @@ eval "$(rbenv init -)"
 
 alias fs="foreman start -f Procfile.mine"
 alias be="bundle exec"
+alias dkc="docker-compose"
 alias pts="git pull origin master:master && git push heroku-staging master:master && heroku run rake db:migrate"
 alias tstart="tmux -S /tmp/tmux-session"
 alias tjoin="tmux -S /tmp/tmux-session attach"

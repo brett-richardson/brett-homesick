@@ -14,11 +14,11 @@ set shiftwidth=2
 set number
 
 " Resize windows with a min height of 2
-set winheight=30
+set winheight=40
 set winminheight=4
 
 " Set additional line height
-set linespace=3
+set linespace=2
 
 " Use space as leader key
 let mapleader=" "
@@ -42,6 +42,7 @@ nnoremap <leader>tn :!npm test<cr>
 nnoremap <leader>tk :!npm test-single-run<cr>
 nnoremap <leader>r :!bundle exec rspec %<cr>
 
+nnoremap <leader>\ :NERDTreeFind<cr>
 nnoremap <leader>\ :NERDTreeFind<cr>
 
 " Misc

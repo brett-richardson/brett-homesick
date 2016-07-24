@@ -4,13 +4,16 @@
 [core]
 	excludesfile = /Users/brett/.gitignore_global
 	editor = /usr/bin/vim
+	quotepath = false
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = " "
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = " "
 	trustExitCode = true
 [alias]
 	co = checkout
 [push]
 	default = current
+[commit]
+	template = /Users/brett/.stCommitMsg

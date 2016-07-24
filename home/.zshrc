@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/brett/.oh-my-zsh
 export EDITOR='vim'
+export KEYTIMEOUT=1
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 ZSH_THEME="bira"
 
@@ -40,6 +42,7 @@ plugins=(git)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 export PATH="/Users/brett/bin:$PATH"
+export PATH="/Applications/Firefox.app/Contents/MacOS:$PATH"
 export HOMEBREW_GITHUB_API_TOKEN="eeb8391a28f4e26110c10b535228ef0a8975eaf7"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -77,3 +80,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Powerline
 # powerline-daemon -q
 # . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+export NVM_DIR="/Users/brett/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

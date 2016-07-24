@@ -27,6 +27,9 @@ let mapleader=" "
 let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
 
+" Enter saves and reruns the last command
+nnoremap <CR> :wa<CR>:!!<CR>
+
 " Leader mappings
 nnoremap <leader>ev :split $MYVIMRC.after<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -38,19 +41,39 @@ nnoremap <leader>4 4gt<cr>
 nnoremap <leader>5 5gt<cr>
 nnoremap <leader>6 6gt<cr>
 
+nnoremap <leader>T :VroomRunTestFile<cr>
 nnoremap <leader>tn :!npm test<cr>
-nnoremap <leader>tk :!npm test-single-run<cr>
-nnoremap <leader>r :!bundle exec rspec %<cr>
+nnoremap <leader>ttn :!./scripts/test_js.sh %<cr>
+nnoremap <leader>tr :!bundle exec rspec<cr>
+nnoremap <leader>ttr :!bundle exec rspec %<cr>
+nnoremap <leader>te :!mix test<cr>
+nnoremap <leader>tte :!mix test %<cr>
 
 nnoremap <leader>\ :NERDTreeFind<cr>
-nnoremap <leader>\ :NERDTreeFind<cr>
+nnoremap <leader><leader> :CtrlPMRU<cr>
+
+nnoremap <leader>/ :Commentary<cr>
+nnoremap <D>/ :Commentary<cr>
+
+nnoremap <leader>zw :ZoomWin<cr>
+nnoremap <leader>b :B" Move to line
 
 " Misc
+autocmd InsertLeave * :set number relativenumber
+autocmd InsertEnter * :set norelativenumber number
 set wildmenu " Autocomplete
 set clipboard+=unnamed,unnamedplus " Use system clipboard
 set mouse=a " enable mouse for all modes settings
 set shell=zsh
 set mousemodel=popup " Rightclick
+set cursorline
+set cursorcolumn
+set relativenumber
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip " MacOSX/Linux
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|bower_components|deps|_build)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
 
 " NERDTree
 let NERDTreeWinPos='right'
@@ -79,3 +102,9 @@ highlight ColorColumn ctermbg=0
 " set laststatus=2 " Always display the statusline in all windows
 " set showtabline=2 " Always display the tabline, even if there is only one tab
 " set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+" Auto reload this file
+" augroup reload_vimrc " {
+"   autocmd!
+"   autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" augroup END " }

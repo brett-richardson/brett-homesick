@@ -23,7 +23,7 @@ set winheight=40
 set winminheight=4
 
 " Set additional line height
-set linespace=2
+set linespace=3
 
 " Use space as leader key
 let mapleader=" "

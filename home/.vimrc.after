@@ -61,7 +61,7 @@ nnoremap <leader>cl :let @* = expand("%") . ":" . line(".")<cr>
 
 " Leader w to save
 nnoremap <leader>w :w<cr>
-nnoremap <D-s> :w<cr>
+nnoremap <A-s> :w<cr>
 
 nnoremap <leader>\ :NERDTreeFind<cr>
 nnoremap <leader><leader> :CtrlPMRU<cr>

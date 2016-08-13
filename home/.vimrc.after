@@ -13,6 +13,11 @@ set shiftwidth=2
 " Show line numbers
 set number
 
+" Enable line numbers in NERDTree
+let NERDTreeShowLineNumbers=1
+" Increase tree width
+let g:NERDTreeWinSize=45
+
 " Resize windows with a min height of 2
 set winheight=40
 set winminheight=4

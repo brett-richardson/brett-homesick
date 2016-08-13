@@ -54,6 +54,9 @@ nnoremap <leader>ttr :!bundle exec rspec %<cr>
 nnoremap <leader>te :!mix test<cr>
 nnoremap <leader>tte :!mix test %<cr>
 
+" copy current file path into clipboard
+nnoremap <leader>cp :let @* = expand("%")<cr>
+nnoremap <leader>cl :let @* = expand("%") . ":" . line(".")<cr>
 nnoremap <leader>\ :NERDTreeFind<cr>
 nnoremap <leader><leader> :CtrlPMRU<cr>
 

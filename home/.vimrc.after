@@ -57,6 +57,11 @@ nnoremap <leader>tte :!mix test %<cr>
 " copy current file path into clipboard
 nnoremap <leader>cp :let @* = expand("%")<cr>
 nnoremap <leader>cl :let @* = expand("%") . ":" . line(".")<cr>
+
+" Leader w to save
+nnoremap <leader>w :w<cr>
+nnoremap <D-s> :w<cr>
+
 nnoremap <leader>\ :NERDTreeFind<cr>
 nnoremap <leader><leader> :CtrlPMRU<cr>
 

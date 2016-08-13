@@ -50,6 +50,7 @@ nnoremap <leader>T :VroomRunTestFile<cr>
 nnoremap <leader>tn :!npm test<cr>
 nnoremap <leader>ttn :!./scripts/test_js.sh %<cr>
 nnoremap <leader>tr :!bundle exec rspec<cr>
+nnoremap <leader>R :!bundle exec rspec %:.<cr>
 nnoremap <leader>ttr :!bundle exec rspec %<cr>
 nnoremap <leader>te :!mix test<cr>
 nnoremap <leader>tte :!mix test %<cr>

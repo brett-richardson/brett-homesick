@@ -67,10 +67,8 @@ nnoremap <leader>\ :NERDTreeFind<cr>
 nnoremap <leader><leader> :CtrlPMRU<cr>
 
 nnoremap <leader>/ :Commentary<cr>
-nnoremap <D>/ :Commentary<cr>
 
 nnoremap <leader>zw :ZoomWin<cr>
-nnoremap <leader>b :B" Move to line
 
 " Misc
 autocmd InsertLeave * :set number relativenumber

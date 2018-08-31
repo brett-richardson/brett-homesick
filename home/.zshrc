@@ -43,6 +43,8 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 export PATH="/Users/brett/bin:$PATH"
 export PATH="/Applications/Firefox.app/Contents/MacOS:$PATH"
+export PATH="./scripts:$PATH"
+
 export HOMEBREW_GITHUB_API_TOKEN="eeb8391a28f4e26110c10b535228ef0a8975eaf7"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -50,7 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-eval "$(docker-machine env default)"
+# eval "$(docker-machine env default)"
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -63,16 +65,36 @@ eval "$(docker-machine env default)"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-export PATH="$HOME/.tmuxifier/bin:$PATH"
+export GOPATH="/Users/brett/dev/go"
+export GOBIN=$GOPATH/bin
+export PATH="$HOME/.tmuxifier/bin:$GOBIN:$PATH"
 
 eval "$(rbenv init -)"
 
+
+alias dk="docker"
+alias dkr="docker run"
+
+alias dkc="docker-compose"
+alias dkcu="docker-compose up"
+alias dkcr="docker-compose run"
+alias dkcd="docker-compose down"
+alias dkcb="docker-compose build"
+alias dkce="docker-compose exec"
+alias dkcl="docker-compose logs"
+alias dkcp="docker-compose ps"
+alias dkcs="docker-compose start"
+
 alias fs="foreman start -f Procfile.mine"
 alias be="bundle exec"
-alias dkc="docker-compose"
+alias dc="docker-compose"
+alias mux="tmuxinator"
+alias tf="terraform"
 alias pts="git pull origin master:master && git push heroku-staging master:master && heroku run rake db:migrate"
 alias tstart="tmux -S /tmp/tmux-session"
 alias tjoin="tmux -S /tmp/tmux-session attach"
+
+alias report="say 'command complete' || say 'command failed'"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -85,3 +107,5 @@ export NVM_DIR="/Users/brett/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

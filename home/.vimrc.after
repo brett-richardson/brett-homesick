@@ -20,10 +20,10 @@ let g:NERDTreeWinSize=45
 
 " Resize windows with a min height of 2
 set winheight=40
-set winminheight=4
+set winminheight=5
 
 " Set additional line height
-set linespace=3
+set linespace=5
 
 " Use space as leader key
 let mapleader=" "
@@ -74,7 +74,7 @@ nnoremap <leader>zw :ZoomWin<cr>
 autocmd InsertLeave * :set number relativenumber
 autocmd InsertEnter * :set norelativenumber number
 set wildmenu " Autocomplete
-set clipboard+=unnamed,unnamedplus " Use system clipboard
+set clipboard=unnamed " Use system clipboard
 set mouse=a " enable mouse for all modes settings
 set shell=zsh
 set mousemodel=popup " Rightclick
@@ -107,16 +107,16 @@ endfor
 set colorcolumn=101
 highlight ColorColumn ctermbg=0
 
-" Powerline
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-" set laststatus=2 " Always display the statusline in all windows
-" set showtabline=2 " Always display the tabline, even if there is only one tab
-" set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-
-" Auto reload this file
-" augroup reload_vimrc " {
-"   autocmd!
-"   autocmd BufWritePost $MYVIMRC source $MYVIMRC
-" augroup END " }
+" EasyMotion config
+" =================
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+" Move to word
+map  <Leader>j <Plug>(easymotion-bd-w)
+nmap <Leader>j <Plug>(easymotion-overwin-w)

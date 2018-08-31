@@ -6,10 +6,10 @@
 	editor = /usr/bin/vim
 	quotepath = false
 [difftool "sourcetree"]
-	cmd = " "
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = " "
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
 	co = checkout
@@ -17,3 +17,15 @@
 	default = current
 [commit]
 	template = /Users/brett/.stCommitMsg
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
